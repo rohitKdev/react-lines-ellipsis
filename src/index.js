@@ -93,7 +93,7 @@ class LinesEllipsis extends React.Component {
         this.units = props.text.split(/\b|(?=\W)/)
         break
       case 'letters':
-        this.units = Array.from(props.text)
+        this.units = Array.from(props.text.replace(/\s+/g, " ").replace(/^\s+|\s+$/g, ""));
         break
       default:
         throw new Error(`Unsupported options basedOn: ${basedOn}`)
