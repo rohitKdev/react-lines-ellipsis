@@ -137,7 +137,7 @@ class LinesEllipsis extends React.Component {
     if (indexes.length <= this.maxLine) return -1
     const lastIndex = indexes[this.maxLine]
     const units = this.units.slice(0, lastIndex)
-    const maxOffsetTop = this.canvas.children[lastIndex].offsetTop
+    const maxOffsetTop = this.canvas.children[lastIndex - 1].offsetTop
     this.canvas.innerHTML = units.map((c, i) => {
       return `<span class='LinesEllipsis-unit'>${c}</span>`
     }).join('') + `<wbr><span class='LinesEllipsis-ellipsis'>${this.props.ellipsis}</span>`
